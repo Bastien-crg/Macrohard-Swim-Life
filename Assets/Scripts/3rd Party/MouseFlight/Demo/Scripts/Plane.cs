@@ -65,6 +65,7 @@ namespace MFlight.Demo
             }
 
             float keyboardPitch = Input.GetAxis("Vertical");
+            Debug.Log(keyboardPitch);
             if (Mathf.Abs(keyboardPitch) > .25f)
             {
                 pitchOverride = true;
@@ -81,7 +82,10 @@ namespace MFlight.Demo
             // Use either keyboard or autopilot input.
             yaw = autoYaw;
             pitch = (pitchOverride) ? keyboardPitch : autoPitch;
+            Debug.Log(pitch);
             roll = (rollOverride) ? keyboardRoll : autoRoll;
+
+
         }
 
         private void RunAutopilot(Vector3 flyTarget, out float yaw, out float pitch, out float roll)
