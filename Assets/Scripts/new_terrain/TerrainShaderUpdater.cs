@@ -41,7 +41,7 @@ public class TerrainShaderUpdater : MonoBehaviour
 
     public void ReloadMaterialHandler(Component sender, object data)
     {
-        ReloadMaterial();
+        updateMaterial();
     }
 
     private Texture2DArray GenerateTextureArray(Texture2D[] textures)

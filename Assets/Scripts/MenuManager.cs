@@ -41,7 +41,7 @@ public class MenuManager : MonoBehaviour
             isOpen = false;
             return;
         }
-        SceneManager.LoadScene("Flight Demo");
+        SceneManager.LoadScene("scene_bastien");
     }
     
     public void OnMainMenuSettingsClicked()

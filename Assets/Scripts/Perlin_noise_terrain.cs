@@ -18,6 +18,8 @@ public class Perlin_noise_terrain : MonoBehaviour
 
     public bool use_seed = true;
 
+    public GameEvent LoadTerrrainMat;
+
     void Start()
     {
         Random.InitState(seed);
@@ -25,7 +27,11 @@ public class Perlin_noise_terrain : MonoBehaviour
         offsetY = Random.Range(0f, 9999f);
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
+
+        LoadTerrrainMat.Raise();
     }
+
+    
 
     float[,] airportArea(float[,] heights)
     {
