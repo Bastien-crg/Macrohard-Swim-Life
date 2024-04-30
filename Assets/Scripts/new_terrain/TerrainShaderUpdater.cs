@@ -26,11 +26,22 @@ public class TerrainShaderUpdater : MonoBehaviour
         material.SetTexture ("baseTextures", texturesArray);
         material.SetFloat("minHeight", 0);
         material.SetFloat("maxHeight", terrain.terrainData.size.y);
-        
+
         // Hack Force updating terrain material
+        ReloadMaterial();
+    }
+
+    private void ReloadMaterial()
+    {
+        var terrain = terrainGameObject.GetComponent<Terrain>();
         var mat = terrain.materialTemplate;
         terrain.materialTemplate = null;
         terrain.materialTemplate = mat;
+    }
+
+    public void ReloadMaterialHandler(Component sender, object data)
+    {
+        ReloadMaterial();
     }
 
     private Texture2DArray GenerateTextureArray(Texture2D[] textures)
