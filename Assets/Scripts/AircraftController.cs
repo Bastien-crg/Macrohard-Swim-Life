@@ -48,6 +48,7 @@ namespace MFlight.Demo
         public Vector3 LocalAngularVelocity;
 
         public float EnginePower;
+        public float maxEnginePower;
 
         [Header("Input")]
         public float inputPitch;
@@ -69,6 +70,8 @@ namespace MFlight.Demo
             inputRoll = Input.GetAxis("Horizontal");
             inputYaw = Input.GetAxis("Yaw");
             EnginePower += Input.GetAxis("Mouse ScrollWheel") * 500;
+            EnginePower = Mathf.Clamp(EnginePower, -maxEnginePower, maxEnginePower);
+            Debug.Log(EnginePower);
 
             CalculateState();
             main.AddForceAtPosition(-EnginePoint.forward * EnginePower, EnginePoint.position);
@@ -90,10 +93,10 @@ namespace MFlight.Demo
             main.AddTorque(transform.up * RudderAOA.Evaluate(AngleOfAttackYaw) * (0.5f * AirPressure * (LocalVelocity.z * LocalVelocity.z)) * VerticalStablizerAera);
             //if (Mathf.Sqrt(AngleOfAttackYaw * AngleOfAttackYaw) < maxAngleOfAttackYaw)
             
-            main.AddTorque(transform.up * _rudder * inputYaw / 40);
+            main.AddTorque(transform.up * _rudder * inputYaw / 10);
             main.AddTorque(transform.forward * _aileron * inputRoll);
             //if (Mathf.Sqrt(AngleOfAttack * AngleOfAttack) < maxAngleOfAttack)
-            main.AddTorque(transform.right * _elevator * inputPitch/20);
+            main.AddTorque(transform.right * _elevator * inputPitch/10);
         }
         void CalculateState()
         {
