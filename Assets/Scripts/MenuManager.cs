@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject settingsMenu;
+    public GameObject gameModeMenu;
     public bool isInGame;
     public bool isOpen;
     
@@ -41,7 +42,8 @@ public class MenuManager : MonoBehaviour
             isOpen = false;
             return;
         }
-        SceneManager.LoadScene("scene_bastien");
+        mainMenu.SetActive(false);
+        gameModeMenu.SetActive(true);
     }
     
     public void OnMainMenuSettingsClicked()
@@ -72,5 +74,19 @@ public class MenuManager : MonoBehaviour
     }
 
     #endregion
+
+    #region GameModeSelection
+
+    public void OnGameModeOneClicked()
+    {
+        SceneManager.LoadScene("mission_low_flight");
+    }
+
+    public void OnGameModeBackClicked()
+    {
+        gameModeMenu.SetActive(false);
+        mainMenu.SetActive(true);
+    }
     
+    #endregion
 }

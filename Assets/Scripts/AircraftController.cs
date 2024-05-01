@@ -56,10 +56,13 @@ namespace MFlight.Demo
         public float inputYaw;
 
 
+        public float startVelocity;
+
         // Start is called before the first frame update
         void Start()
         {
             main.centerOfMass = CM.localPosition;
+            main.velocity = new Vector3(0, 0, startVelocity);
         }
 
         // Update is called once per frame

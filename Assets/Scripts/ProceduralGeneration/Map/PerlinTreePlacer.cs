@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PerlinTreePlacer : MonoBehaviour
 {
@@ -25,6 +27,11 @@ public class PerlinTreePlacer : MonoBehaviour
     public GameObject tree;
     
     public bool autoUpdate;
+
+    private void Start()
+    {
+        GenerateMap();
+    }
 
     public void GenerateMap()
     {

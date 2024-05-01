@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
+  m_text: 'Leave game
 
 '
   m_isRightToLeft: 0
@@ -1703,6 +1703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 3823248970923114411}
   settingsMenu: {fileID: 3004446802789581638}
+  gameModeMenu: {fileID: 0}
   isInGame: 1
   isOpen: 0
 --- !u!114 &784825974639545327

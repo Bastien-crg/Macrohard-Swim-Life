@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Perlin_noise_terrain : MonoBehaviour
 {
@@ -22,16 +24,19 @@ public class Perlin_noise_terrain : MonoBehaviour
 
     void Start()
     {
-        Random.InitState(seed);
+        // Start's code has been moved in awake because terrain has to be modified before we place trees
+        LoadTerrrainMat.Raise();
+    }
+
+    private void Awake()
+    {
+        if (use_seed) Random.InitState(seed);
         offsetX = Random.Range(0f, 9999f);
         offsetY = Random.Range(0f, 9999f);
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
-
-        LoadTerrrainMat.Raise();
     }
 
-    
 
     float[,] airportArea(float[,] heights)
     {
@@ -63,7 +68,6 @@ public class Perlin_noise_terrain : MonoBehaviour
                 heights[x, y] = CalculateHeight(x, y);
             }
         }
-        heights = airportArea(heights);
         return heights;
     }
 
