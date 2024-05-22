@@ -11,10 +11,15 @@ public class Perlin_noise_terrain : MonoBehaviour
     public int width = 256;
     public int height = 256;
 
-    public float scale = 20f;
+    public float frequency = 20f;
 
     public float offsetX = 100f;
     public float offsetY = 100f;
+
+    public float lacunarity;
+    public float persistance;
+    public float amplitude;
+    public int octaves;
 
     public int seed;
 
@@ -38,21 +43,11 @@ public class Perlin_noise_terrain : MonoBehaviour
     }
 
 
-    float[,] airportArea(float[,] heights)
-    {
-        for (int i = 0; i < 80; i++)
-        {
-            for (int j = 0; j < 340; j++)
-            {
-                heights[width/2+i, width/2+j] = 0.55f;
-            }
-        }
-        return heights;
-    }
+  
 
     TerrainData GenerateTerrain(TerrainData terrainData)
     {
-        terrainData.heightmapResolution = width + 1;
+        terrainData.heightmapResolution = width ;
         terrainData.size = new Vector3(width, depth, height);
         terrainData.SetHeights(0, 0, GenerateHeights());
         return terrainData;
@@ -60,22 +55,62 @@ public class Perlin_noise_terrain : MonoBehaviour
 
     float[,] GenerateHeights()
     {
-        float[,] heights = new float[width, height];
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                heights[x, y] = CalculateHeight(x, y);
-            }
-        }
-        return heights;
+        float[,] noiseMap = Noiser.GenerateNoiseMap(width, height, seed, frequency, octaves, persistance, lacunarity, new Vector2(offsetX,offsetY));
+        Debug.Log(noiseMap);
+        return noiseMap;
     }
+
+
+    /*float[,] GenerateHeights()
+    {
+        float[,] heights = new float[width, height];
+        for (int i = 0; i < octaves; i++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    heights[x, y] += CalculateHeight(x, y);
+                }
+            }
+            frequency *= lacunirity;
+            amplitude *= persistence;
+        }
+        
+        
+        return heights;
+    }*/
 
     float CalculateHeight (int x, int y)
     {
-        float xCoord = (float) x / width * scale + offsetX;
-        float yCoord = (float) y / height * scale + offsetY;
-        return Mathf.PerlinNoise(xCoord, yCoord);
+        float xCoord = (float) x / width * frequency + offsetX;
+        float yCoord = (float) y / height * frequency + offsetY;
+        return Mathf.PerlinNoise(xCoord, yCoord)*amplitude;
     }
+
+    /*public int mapWidth;
+    public int mapHeight;
+    public float noiseScale;
+
+    public int octaves;
+    [Range(0, 1)]
+    public float persistance;
+    public float lacunarity;
+
+    public int seed;
+    public Vector2 offset;
+
+    public bool autoUpdate;
+
+    public void GenerateMap()
+    {
+        float[,] noiseMap = Noise.GenerateNoiseMap(mapWidth, mapHeight, seed, noiseScale, octaves, persistance, lacunarity, offset);
+
+
+        MapDisplay display = FindObjectOfType<MapDisplay>();
+        display.DrawNoiseMap(noiseMap);
+    }*/
+
     
+
 }
