@@ -11,6 +11,10 @@ public class MenuManager : MonoBehaviour
     public GameObject gameModeMenu;
     public bool isInGame;
     public bool isOpen;
+
+    public AudioSource clickAudioSource;
+    public AudioSource hoverAudioSource;
+
     
     public void OnMenuOpen(Component sender, object data)
     {
@@ -88,5 +92,19 @@ public class MenuManager : MonoBehaviour
         mainMenu.SetActive(true);
     }
     
+    #endregion
+
+    #region Sound
+    
+    public void PlayClickSound()
+    {
+        clickAudioSource.Play();
+    }
+    
+    public void PlayHoverSound()
+    {
+        hoverAudioSource.Play();
+    }
+
     #endregion
 }
