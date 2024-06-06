@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1255,12 +1255,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &1115443518 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6070607802966369091, guid: fdb5563d5a890b34da10c2c66564daa6,
-    type: 3}
-  m_PrefabInstance: {fileID: 4666288135006621665}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1225721893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,7 +2988,6 @@ Transform:
   - {fileID: 1725086955}
   - {fileID: 1633400355}
   - {fileID: 980681545}
-  - {fileID: 1115443518}
   - {fileID: 1377185790}
   m_Father: {fileID: 2090438907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3794,7 +3787,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1631287023}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1757162831688717769, guid: fdb5563d5a890b34da10c2c66564daa6,
         type: 3}
@@ -3814,7 +3807,7 @@ PrefabInstance:
     - target: {fileID: 6070607802966369091, guid: fdb5563d5a890b34da10c2c66564daa6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.6
+      value: 36.199997
       objectReference: {fileID: 0}
     - target: {fileID: 6070607802966369091, guid: fdb5563d5a890b34da10c2c66564daa6,
         type: 3}
@@ -3856,6 +3849,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6568679596840878834, guid: fdb5563d5a890b34da10c2c66564daa6,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1631287023}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3868,3 +3866,4 @@ SceneRoots:
   - {fileID: 982573392}
   - {fileID: 18466402}
   - {fileID: 2090438907}
+  - {fileID: 4666288135006621665}
