@@ -27,12 +27,12 @@ public class PlaneAnimation : MonoBehaviour {
     float smoothedYaw;
     float smoothYawV;
 
-    MFlight.Demo.Plane plane;
-    MFlight.Demo.AircratController ACControlller;
+    Plane plane;
+    AircratController ACControlller;
 
     void Start () {
-        plane = GetComponent<MFlight.Demo.Plane> ();
-        ACControlller = GetComponent<MFlight.Demo.AircratController>();
+        plane = GetComponent<Plane> ();
+        ACControlller = GetComponent<AircratController>();
     }
 
     void Update () {

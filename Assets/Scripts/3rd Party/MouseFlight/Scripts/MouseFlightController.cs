@@ -5,8 +5,7 @@
 
 using UnityEngine;
 
-namespace MFlight
-{
+
     /// <summary>
     /// Combination of camera rig and controller for aircraft. Requires a properly set
     /// up rig. I highly recommend either using or referencing the included prefab.
@@ -230,4 +229,4 @@ namespace MFlight
             }
         }
     }
-}
+

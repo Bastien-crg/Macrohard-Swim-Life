@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AircraftHUD : MonoBehaviour
 {
-    public MFlight.Demo.AircratController aircrat;
+    public AircratController aircrat;
     public Text Speed;
     public Text Altitude;
     public Text Thrust;
