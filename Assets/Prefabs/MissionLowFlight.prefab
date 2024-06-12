@@ -738,6 +738,7 @@ MonoBehaviour:
   minScoringHeight: 100
   scoreValueTMP: {fileID: 856624680492039859}
   scoreSlider: {fileID: 1750343854979427876}
+  endEvent: {fileID: 11400000, guid: d0a02016727dc0f4f86a47c17e212969, type: 2}
 --- !u!114 &2694980825620510132
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class LowFlight : MonoBehaviour
     private float score = 0;
 
     private bool hasCrashed = false;
+    public GameEvent endEvent;
 
     private void Start()
     {
@@ -53,5 +54,6 @@ public class LowFlight : MonoBehaviour
     public void OnPlaneCollision(Component sender, object data)
     {
         hasCrashed = true;
+        endEvent.Raise(null, "You crashed with a score of " + score);
     }
 }
