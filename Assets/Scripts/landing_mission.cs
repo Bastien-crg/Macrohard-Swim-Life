@@ -6,6 +6,8 @@ public class landing_mission : MonoBehaviour
 {
     public List<GameObject> mongolfiers;
     // Start is called before the first frame update
+
+    public GameEvent endEvent;
    
 
     // Update is called once per frame
@@ -13,7 +15,7 @@ public class landing_mission : MonoBehaviour
     {
         if (mongolfiers[0] == null && mongolfiers[1] == null && mongolfiers[2] == null)
         {
-            Debug.Log("Mission finished");
+            endEvent.Raise(null, "You have completed the mission !");
         }
         
 

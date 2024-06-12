@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Flight Demo.unity
-    guid: 20dddf1c73edf8b43a45ac49c16cb892
+    path: Assets/_Scenes/MainMenu.unity
+    guid: 6b688b7d2a2305240bfcfb2a33a136f1
+  - enabled: 1
+    path: Assets/_Scenes/scene_bastien.unity
+    guid: b2e087c7d2e045b4d9e1a3ff479859de
+  - enabled: 1
+    path: Assets/_Scenes/Micka/mission_low_flight.unity
+    guid: 89b5d2baf1592ab4a891e4a25ce6e55e
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2c72c1a5f2cf1774ca235bcb5559048a,
       type: 2}

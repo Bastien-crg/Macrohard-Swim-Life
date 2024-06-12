@@ -86,6 +86,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("mission_low_flight");
     }
 
+    public void OnGameModeTwoCLicked()
+    {
+        SceneManager.LoadScene("scene_bastien");
+    }
+
     public void OnGameModeBackClicked()
     {
         gameModeMenu.SetActive(false);
