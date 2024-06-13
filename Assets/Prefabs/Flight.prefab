@@ -13750,32 +13750,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -300
-      value: -1
-      inSlope: 0.01135755
-      outSlope: 0.01135755
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.12473348
-    - serializedVersion: 3
-      time: 0
-      value: 0
+      time: -299.4152
+      value: -0.99773407
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
-      time: 300
-      value: 1
-      inSlope: 0.009770838
-      outSlope: 0.009770838
+      time: 300.41516
+      value: 1.0544205
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.15778244
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -13787,7 +13778,7 @@ MonoBehaviour:
   LocalVelocity: {x: 0, y: 0, z: 0}
   LocalAngularVelocity: {x: 0, y: 0, z: 0}
   EnginePower: 0
-  maxEnginePower: 1500
+  maxEnginePower: 2000
   inputPitch: 0
   inputRoll: 0
   inputYaw: 0
@@ -13808,7 +13799,7 @@ MonoBehaviour:
   Speed: {fileID: 0}
   Altitude: {fileID: 0}
   Thrust: {fileID: 0}
-  maxEnginePower: 1500
+  maxEnginePower: 2000
 --- !u!114 &7371835512361466486
 MonoBehaviour:
   m_ObjectHideFlags: 0

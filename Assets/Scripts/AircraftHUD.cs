@@ -25,6 +25,6 @@ public class AircraftHUD : MonoBehaviour
         //Cursor.position = camera.WorldToScreenPoint(AimPoint.transform.position);
         Speed.text = aircrat.LocalVelocity.z * 5.76f + " KPH";
         Altitude.text = aircrat.transform.position.y + " M";
-        Thrust.text = aircrat.EnginePower/maxEnginePower*216 + " ch";
+        Thrust.text = aircrat.EnginePower/maxEnginePower*90 + " ch";
     }
 }
